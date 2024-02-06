@@ -1,0 +1,59 @@
+<h1>Return carte</h1>
+<p>Această formă vă permite să returnați o carte. Vă rugăm să completați informațiile obligatorii.</p>
+
+
+<oj-form-layout id='formLayoutOptions' max-columns="2"
+                direction="row"
+                class="oj-formlayout-full-width"
+                user-assistance-density='efficient'>
+
+                <oj-select-single id="selectBookTitle"
+                value="{{inputBookTitleValue}}"
+                label-hint="Selectează titlul"
+                data="{{booksDataProvider}}"
+                required>
+                </oj-select-single>
+
+
+  <oj-input-text id="text-input-autor"
+                 value="{{inputAuthorValue}}"
+                 label-hint="Autor"
+                 label-edge="inside" readonly>
+  </oj-input-text>
+
+
+  <oj-select-single id="selectReason"
+                    value="{{inputReasonValue}}"
+                    label-hint="Selectează motivul"
+                    data="[[inputReasonDataProvider]]"
+                    required>
+  </oj-select-single>
+
+
+  <oj-input-text id="text-input-adresa"
+                 value="{{inputAdresaValue}}"
+                 label-hint="Adresa Livrare"
+                 label-edge="inside">
+  </oj-input-text>
+
+  <oj-radioset label-hint="Tip plata" value="{{tipPlata}}" aria-controls="myform">
+    <oj-option value="card">Card</oj-option>
+    <oj-option value="banca">Transfer bancar</oj-option>
+  </oj-radioset>
+
+
+  
+
+</oj-form-layout>
+
+<!-- buttons  -->
+<div class="oj-flex oj-sm-flex-items-initial oj-sm-justify-content-flex-end">
+  <div class="oj-flex-item">
+    <oj-button on-oj-action='[[submitForm]]' chroming="callToAction">
+      <span>
+        <oj-bind-text value="Trimite"></oj-bind-text>
+      </span>
+    </oj-button>
+  </div>
+</div>
+<!-- buttons end -->
